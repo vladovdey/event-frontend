@@ -18,8 +18,8 @@
           пространств, проведением вебинаров и дистанционным обучением.
         </p>
         <CityList :events="events" @open-popup="toggleRegPopup" />
-        <div class="wrapper-popup" @click.self="toggleRegPopup($event)" v-if="regPopup">
-          <RegistrationForm />
+        <div class="wrapper-popup" @click.self="toggleRegPopup" v-if="regPopup">
+          <RegistrationForm :eventParam="selectedEvent" />
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@ export default {
   data: function () {
     return {
       events: [],
+      selectedEvent: '',
       regPopup: false,
     };
   },
@@ -75,7 +76,7 @@ export default {
       return events;
     },
     toggleRegPopup: function (e) {
-      console.log(e);
+      this.selectedEvent = e.city;
       this.regPopup = !this.regPopup;
     },
   },
@@ -87,55 +88,5 @@ export default {
 </script>
 
 <style>
-* {
-  font-family: "Fira Sans", sans-serif;
-}
-h1 {
-  margin: 0;
-  font-weight: 700;
-}
-body {
-  margin: 0;
-  padding: 0;
-  color: #333;
-  position: relative;
-}
-p {
-  font-size: 20px;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-#root{
-  height: 100vh;
-}
-.center{
-  text-align: center;
-}
-.header {
-  box-shadow: 0px 1px 5px 2px rgb(0 0 0 / 40%);
-  background-color: #1591a0;
-  color: #fff;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 30px;
-}
-.container {
-  max-width: 992px;
-  width: 100%;
-  margin: 0 auto;
-}
-.body {
-  text-align: justify;
-}
-.wrapper-popup {
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  left: 0;
-}
+
 </style>

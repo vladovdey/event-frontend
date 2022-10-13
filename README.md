@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### To-do:
+- настройка скриптов сборки css;
+- переход на использование Sass;
+- Обновления дизайна в соответствии с требованием дизайнеров;
+- Бэкэнд принимающий регистрации;

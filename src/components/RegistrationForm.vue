@@ -1,6 +1,6 @@
 <template>
   <div class="form-container container">
-    <p class="center">Форма регистрации на мероприятия</p>
+    <p class="center">Форма регистрации на мероприятия в {{ eventParam }}</p>
     <form @submit.prevent="sendFormData" action="/">
       <input type="text" v-model="firstname" placeholder="Имя" />
       <input type="text" v-model="surname" placeholder="Фамилия" />
@@ -64,6 +64,7 @@ export default {
       position: "",
     };
   },
+  props: ["eventParam"],
   methods: {
     sendFormData: function () {
       let dataObj = {
@@ -89,17 +90,32 @@ form {
   max-width: 640px;
   width: 100%;
 }
-input:not([type="radio"], [type="checkbox"]) {
+input{
   box-sizing: content-box;
+  font-size: 18px;
+}
+input:not([type="radio"], [type="checkbox"], [type="submit"]) {
   max-width: 640px;
   width: 100%;
-  margin: 5px auto;
+  height: 40px;
+  margin: 8px auto;
   padding-left: 10px;
   border: 1px solid #018c9c;
   border-radius: 10px;
-  height: 30px;
-  font-size: 16px;
 }
+
+input[type="submit"]{
+  background-color:#FF6B00;
+  color: #fff;
+  max-width: 260px;
+  height: 40px;
+  width: 100%;
+  margin: 20px auto 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .form-container {
   background-color: #fff;
   border-radius: 5px;
