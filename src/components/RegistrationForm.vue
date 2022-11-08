@@ -1,6 +1,6 @@
 <template>
   <div class="form-container container">
-    <p class="center">Форма регистрации на мероприятия в {{ eventParam }}</p>
+    <p class="center">Форма регистрации на мероприятия в {{ cityName }}</p>
     <form @submit.prevent="sendFormData" action="/">
       <input type="text" v-model="firstname" placeholder="Имя" />
       <input type="text" v-model="surname" placeholder="Фамилия" />
@@ -62,6 +62,7 @@ export default {
       company: "",
       integrator: "",
       position: "",
+      cityName: "",
     };
   },
   props: ["eventParam"],
@@ -79,6 +80,10 @@ export default {
       console.log(dataObj);
     },
   },
+  created: function () {
+    let param = window.location.search.substr(1).split("=")[1];
+    this.cityName = decodeURI(param);
+  }
 };
 </script>
 
@@ -87,7 +92,7 @@ form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 340px;
   width: 100%;
 }
 input{
@@ -107,8 +112,8 @@ input:not([type="radio"], [type="checkbox"], [type="submit"]) {
 input[type="submit"]{
   background-color:#FF6B00;
   color: #fff;
-  max-width: 260px;
-  height: 40px;
+  max-width: 200px;
+  height: 60px;
   width: 100%;
   margin: 20px auto 0;
   border: none;
