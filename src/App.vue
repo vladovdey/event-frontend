@@ -1,69 +1,30 @@
 <template>
-  <div id="root">
-    <div class="container">
-      <RegistrationForm :eventParam="selectedEvent" />
-    </div>
-  </div>
+  <nav class="test">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/form">Form</router-link>
+  </nav>
+  <router-view/>
 </template>
 
-<script>
-import RegistrationForm from "./components/RegistrationForm.vue";
-
-export default {
-  name: "App",
-  data: function () {
-    return {
-      events: [],
-      selectedEvent: '',
-      regPopup: false,
-    };
-  },
-  components: {
-    RegistrationForm,
-  },
-  methods: {
-    getAllEvents: async () => {
-      let events = [];
-      //for local development
-      let testStrEvents = [
-        {
-          date: "16.10.2022",
-          city: "Новосибирск",
-          location: "Grand Autograph Hotel, улица Орджоникидзе, 31",
-        },
-        {
-          date: "20.10.2022",
-          city: "Екатеринбург",
-          location: "Novotel, ул. Энгельса, 7",
-        },
-        {
-          date: "25.10.2022",
-          city: "Тюмень",
-          location: "Double Tree by Hilton, ул. Орджоникидзе 46",
-        },
-        {
-          date: "26.10.2022",
-          city: "Сургут",
-          location: null,
-        },
-      ];
-      events = testStrEvents;
-      //end for local development
-
-      return events;
-    },
-    toggleRegPopup: function (e) {
-      this.selectedEvent = e.city;
-      this.regPopup = !this.regPopup;
-    },
-  },
-  computed: {},
-  created: async function () {
-    this.events = await this.getAllEvents();
-  },
-};
-</script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>

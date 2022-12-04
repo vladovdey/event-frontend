@@ -1,5 +1,5 @@
 <template>
-  <div class="form-container container">
+  <div v-if="formStatus" class="form-container container">
     <p class="center">Форма регистрации на мероприятия в {{ cityName }}</p>
     <form @submit.prevent="sendFormData" action="/">
       <input type="text" v-model="firstname" placeholder="Имя" />
@@ -48,6 +48,9 @@
       <input type="submit" value="Зарегистрироваться" />
     </form>
   </div>
+  <div v-else>
+    <p style="text-align: center;">Не смогли определить твой город</p>
+  </div>
 </template>
 
 <script>
@@ -63,6 +66,7 @@ export default {
       integrator: "",
       position: "",
       cityName: "",
+      formStatus: true
     };
   },
   props: ["eventParam"],
@@ -82,7 +86,11 @@ export default {
   },
   created: function () {
     let param = window.location.search.substr(1).split("=")[1];
-    this.cityName = decodeURI(param);
+    if(param){
+      this.cityName = decodeURI(param);
+    }else{
+      this.formStatus = false; 
+    }
   }
 };
 </script>
@@ -120,7 +128,6 @@ input[type="submit"]{
   border-radius: 6px;
   cursor: pointer;
 }
-
 .form-container {
   background-color: #fff;
   border-radius: 5px;
