@@ -14,7 +14,7 @@
           <p class="card-info__ad">{{ event.location }}</p>
           <div class="button-container">
             <button class="button orange-button">
-              <router-link to="/form">Это мой город</router-link>
+              <router-link :to="('/city/'+event.id)">Это мой город</router-link>
             </button>
           </div>
         </div>

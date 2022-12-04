@@ -38,7 +38,7 @@ export default {
         const elemDateArr = elem.date.split('.');
         const {elemDay, elemMonth} = { elemDay: elemDateArr[0] , elemMonth: elemDateArr[1] };
 
-        if(elemMonth == currentMonth && elemDay < currentDay){
+        if(elemMonth == currentMonth && elemDay <= currentDay){
           elem.active = false;
         }else if(elemMonth < currentMonth){
           elem.active = false;
@@ -96,25 +96,25 @@ export default {
         },
         {
           id: 6,
-          date: "03.11.2022",
+          date: "15.12.2022",
           city: "Ростов-на-Дону",
           location: null,
         },
         {
           id: 7,
-          date: "05.12.2022",
+          date: "23.12.2022",
           city: "Краснодар",
           location: "Novotel, ул. Энгельса, 7",
         },
         {
           id: 8,
-          date: "15.12.2022",
+          date: "25.12.2022",
           city: "Кисловодск",
           location: "Double Tree by Hilton, ул. Орджоникидзе 46",
         },
         {
           id: 9,
-          date: "18.12.2022",
+          date: "27.12.2022",
           city: "Ставрополь",
           location: null,
         },
