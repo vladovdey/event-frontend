@@ -14,7 +14,7 @@
           <p class="card-info__ad">{{ event.location }}</p>
           <div class="button-container">
             <button class="button orange-button">
-              <router-link :to="('/city/'+event.id)">Это мой город</router-link>
+              <router-link :to="('/city'+event.path)">Это мой город</router-link>
             </button>
           </div>
         </div>
@@ -72,8 +72,7 @@ export default {
   display: none;
 }
 .custom-grid{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  column-count: 2;
 }
 .city-item.card-additional--opened .card-additional{
   display: block;

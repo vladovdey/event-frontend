@@ -63,60 +63,70 @@ export default {
           date: "16.10.2022",
           city: "Новосибирск",
           location: "Grand Autograph Hotel, улица Орджоникидзе, 31",
+          path: '/novosibirsk'
         },
         {
           id: 1,
           date: "20.10.2022",
           city: "Екатеринбург",
           location: "Novotel, ул. Энгельса, 7",
+          path: '/ekb'
         },
         {
           id: 2,
           date: "25.10.2022",
           city: "Тюмень",
           location: "Double Tree by Hilton, ул. Орджоникидзе 46",
+          path: '/tumen'
         },
         {
           id: 3,
           date: "26.10.2022",
           city: "Сургут",
           location: null,
+          path: '/surgut'
         },
         {
           id: 4,
           date: "28.10.2022",
           city: "Волгоград",
           location: "Novotel, ул. Энгельса, 7",
+          path: '/volgograd'
         },
         {
           id: 5,
           date: "01.11.2022",
           city: "Владикавказ",
           location: "Double Tree by Hilton, ул. Орджоникидзе 46",
+          path: '/vladikavkaz'
         },
         {
           id: 6,
           date: "15.12.2022",
           city: "Ростов-на-Дону",
           location: null,
+          path: '/rostov'
         },
         {
           id: 7,
           date: "23.12.2022",
           city: "Краснодар",
           location: "Novotel, ул. Энгельса, 7",
+          path: '/kransodar'
         },
         {
           id: 8,
           date: "25.12.2022",
           city: "Кисловодск",
           location: "Double Tree by Hilton, ул. Орджоникидзе 46",
+          path: "/kislovodsk"
         },
         {
           id: 9,
           date: "27.12.2022",
           city: "Ставрополь",
           location: null,
+          path: '/stavropol'
         },
       ];
     this.events = this.formatingEvents(getEvents);
