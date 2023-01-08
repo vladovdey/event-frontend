@@ -1,12 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CityView from '../views/CityView.vue'
+import AdminView from '../views/admin/AdminView.vue'
+import AdminAddEvent from '../views/admin/AdminAddEvent.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminView
+  },
+  {
+    path: '/admin/add-event',
+    name: 'AdminAddEvent',
+    component: AdminAddEvent
   },
   {
     path: '/form',

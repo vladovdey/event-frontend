@@ -22,7 +22,6 @@ export default {
   data: function(){
     return{
       events: [],
-      message: 'ebal'
     }
   },
   methods: {
